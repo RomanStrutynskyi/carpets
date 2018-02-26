@@ -30,7 +30,50 @@ var IntroSlider = {
       speed: 1000,
       cssEase: 'linear',
       autoplay: true,
-      autoplaySpeed: 5000,
+      autoplaySpeed: 3000,
+      zIndex: 2
+    });
+  }
+};
+
+var SectionIntro = {
+  classes: {
+    // root:'.js-intro',
+    // prev:'.js-slider-intro-prev', 
+    // next:'.js-slider-intro-next'
+  },
+  init: function init() {
+    IntroSlider.init();
+    // $(this.classes.prev).on('click',() =>{
+    //   IntroSlider.slickPrev();
+    // });
+    // $(this.classes.next).on('click',() =>{
+    //   IntroSlider.slickNext();
+    // });
+    // $(this.classes.root).hover(()=>{
+    //   self.arrowShow();
+    // });
+  },
+  arrowShow: function arrowShow() {
+    // $(this.classes.prev + "," + this.classes.next).toggleClass('visible')
+  }
+};
+
+var ItemSlider = {
+  classes: {
+    root: '.js-item-slider'
+  },
+  init: function init() {
+    $(this.classes.root).slick({
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      fade: true,
+      speed: 1000,
+      cssEase: 'linear',
+      autoplay: true,
+      autoplaySpeed: 3000,
       zIndex: 2
     });
   },
@@ -42,27 +85,25 @@ var IntroSlider = {
   }
 };
 
-var SectionIntro = {
+var SectionSlider = {
   classes: {
-    root: '.js-intro',
-    prev: '.js-slider-intro-prev',
-    next: '.js-slider-intro-next'
+    root: '.js-slider',
+    prev: '.js-slider-prev',
+    next: '.js-slider-next'
   },
   init: function init() {
-    var self = this;
-    IntroSlider.init();
+    ItemSlider.init();
     $(this.classes.prev).on('click', function () {
-      IntroSlider.slickPrev();
+      ItemSlider.slickPrev();
     });
     $(this.classes.next).on('click', function () {
-      IntroSlider.slickNext();
+      ItemSlider.slickNext();
     });
-    $(this.classes.root).hover(function () {
-      self.arrowShow();
-    });
-  },
-  arrowShow: function arrowShow() {
-    $(this.classes.prev + "," + this.classes.next).toggleClass('visible');
+    // $(this.classes.root).hover(()=>{
+    //   self.arrowShow();
+    // });
+
+    $(this.classes.prev + "," + this.classes.next).addClass('visible');
   }
 };
 
@@ -74,6 +115,7 @@ console.log(Config);
 // =========================================
 // Module1.init();
 SectionIntro.init();
+SectionSlider.init();
 
 $(document).ready(function () {
     $('.main').fullpage({
