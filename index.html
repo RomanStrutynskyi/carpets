@@ -112,7 +112,7 @@
         <div class="m-item-process o-section-process__items">
           <div class="m-item-process__items">
             <div class="m-item-process__item"><img src="./img/process/process-1.png" alt="process-1" class="m-item-process__img">
-              <h3 class="m-item-process__subtitle">Приймаємо засовлення по телефону та формуємо зявку</h3>
+              <h3 class="m-item-process__subtitle">Приймаємо замовлення по телефону та формуємо зявку</h3>
               <svg class="a-icon m-item-process__icon">
                 <use xlink:href="./img/sprite.svg#icon-arrow-process"></use>
               </svg>
@@ -225,9 +225,12 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1102.7118894065425!2d24.717820291757093!3d48.90194661542865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdbba0e0e1c6d1484!2z0J_RgNC-0YTQtdGB0ZbQudC90LUg0L_RgNCw0L3QvdGPINC60LjQu9C40LzRltCy!5e0!3m2!1suk!2sua!4v1519652343502" allowfullscreen class="o-section-footer__map col-5 m-map"></iframe>
         <div class="m-form o-section-footer__form col-7">
           <div class="m-form__title">як нас знайти</div>
-          <form class="m-form__content">
+          <form class="m-form__content js-form">
+            <label for="name"></label>
             <input class="m-form__input m-form__field a-input" placeholder="Ваше ім'я" name="name">
-            <input class="m-form__input m-form__field a-input" placeholder="Ваше номер" name="email">
+            <label for="phone"></label>
+            <input class="m-form__input m-form__field js-form-phone a-input" placeholder="Ваше номер" name="phone">
+            <label for="description"></label>
             <textarea class="m-form__textarea m-form__field a-textarea" placeholder="Ваше повідомлення" name="description"></textarea>
             <div class="a-button m-form__button" type="submit">Відправити</div>
           </form>
@@ -243,6 +246,8 @@
     </section>
   </div>
   <script src="./scripts/libs/jquery.min.js"></script>
+  <script src="./scripts/libs/jquery.validate.min.js"></script>
+  <script src="./scripts/libs/jquery.mask.min.js"></script>
   <script src="./scripts/libs/slick.min.js"></script>
   <script src="./scripts/libs/fullPage.js"></script>
   <script src="./scripts/main.js"></script>
