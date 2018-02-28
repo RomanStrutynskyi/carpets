@@ -107,19 +107,61 @@ var SectionSlider = {
   }
 };
 
+var ItemReview = {
+  classes: {
+    root: '.js-review-slider'
+  },
+  init: function init() {
+    $(this.classes.root).slick({
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      fade: true,
+      speed: 500,
+      cssEase: 'linear',
+      zIndex: 2
+    });
+  },
+  slickNext: function slickNext() {
+    $(this.classes.root).slick('slickNext');
+  },
+  slickPrev: function slickPrev() {
+    $(this.classes.root).slick('slickPrev');
+  }
+};
+
+var SectionReviews = {
+  classes: {
+    root: '.js-reviews-slider',
+    prev: '.js-reviews-slider-prev',
+    next: '.js-reviews-slider-next'
+  },
+  init: function init() {
+    ItemReview.init();
+    $(this.classes.prev).on('click', function () {
+      ItemReview.slickPrev();
+    });
+    $(this.classes.next).on('click', function () {
+      ItemReview.slickNext();
+    });
+  }
+};
+
 var FormModule = {
   classes: {
     root: '.js-form',
-    phone: '.js-form-phone'
+    phone: '.js-form-phone',
+    thank: '.js-thank'
   },
   init: function init() {
     var _this = this;
 
     var self = this;
-    var captchaImg = $(this.classes.root).find('.captcha').addClass('classes.root-window__captcha-img');
-    var captchaInput = $(this.classes.root).find('#id_captcha_1').addClass('field__input');
-    var captchaLabel = $(this.classes.root).find('.field__label-captcha, #id_captcha_1').wrapAll("<div class='field classes.root-window__field-captcha'></div>");
-    var captchaInputHidden = $(this.classes.root).find('.captcha, .classes.root-window__field-captcha, #id_captcha_0').wrapAll("<div class='classes.root-window__captcha'></div>");
+    var captchaImg = $(this.classes.root).find('.captcha').addClass('m-form__captcha-img');
+    var captchaInput = $(this.classes.root).find('#id_captcha_1').addClass('m-form__field a-input');
+    var captchaLabel = $(this.classes.root).find('label[for="id_captcha_1"], #id_captcha_1').wrapAll("<div class='field m-form__field-captcha'></div>");
+    var captchaInputHidden = $(this.classes.root).find('.captcha, .m-form__field-captcha, #id_captcha_0').wrapAll("<div class='m-form__captcha'></div>");
     $(captchaImg).click(function () {
       _this.refrechCaptcha();
     });
@@ -156,7 +198,8 @@ var FormModule = {
             regex: /^[+-]{1}[0-9]{2}\([0-9]{3}\)[0-9]{2}\-[0-9]{2}\-[0-9]{3}$/
           },
           description: {
-            required: true
+            required: true,
+            minlength: 20
           },
           captcha_1: {
             required: true,
@@ -176,7 +219,9 @@ var FormModule = {
             regex: "Наприклад: +38(099)12-34-567"
           },
           description: {
-            required: "Введіть повідомлення"
+            required: "Введіть повідомлення",
+            minlength: "Ваше повідомлення закоротке"
+
           },
           captcha_1: {
             required: "Введіть капчу",
@@ -207,7 +252,7 @@ var FormModule = {
             headers: {
               'X-CSRFToken': getCookie('csrftoken')
             },
-            success: function success(response) {
+            success: function success() {
               if (response.message == "Invalid captcha") {
                 $('img.captcha').trigger('click');
               } else {
@@ -231,8 +276,7 @@ var FormModule = {
   },
   cleanForm: function cleanForm() {
     $(this.classes.root).fadeOut();
-    $('.main__diagnosis .main__title').fadeOut();
-    $('.main__diagnosis-text').fadeIn(500);
+    $(this.classes.thank).addClass('m-form__thanks--visible');
   }
 };
 
@@ -251,6 +295,7 @@ console.log(Config);
 // Module1.init();
 SectionIntro.init();
 SectionSlider.init();
+SectionReviews.init();
 Footer.init();
 
 $(document).ready(function () {
