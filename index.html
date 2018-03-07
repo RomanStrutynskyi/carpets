@@ -2,15 +2,16 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title></title>
-  <meta name="description" content="My application">
+  <title>Tech Clean</title>
+  <meta name="description" content="Tech Clean">
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./styles/main.css">
 </head>
 <body data-page="main">
   <header id="header" class="o-header">
     <div class="container o-header__container">
-      <div class="col-5 o-header__item">
+      <div class="col-lg-5 col-md-5 o-header__item">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 261.8 103.9" class="a-logo">
           <defs>
             <radialgradient id="GradientFill_2" cx="198.15" cy="85.75" r="47.2" gradientunits="userSpaceOnUse">
@@ -72,76 +73,97 @@
             </g>
           </g>
         </svg>
-        <div class="o-header__phones"><a href="tel:+38 (000)00 00 000" class="o-header__phone a-phone">+38 (000)00 00 000</a><a href="tel:+38 (000)00 00 000" class="o-header__phone a-phone">+38 (000)00 00 000</a>
+        <div class="o-header__phones"><a href="tel:380961234567" class="o-header__phone a-phone">+38(096)12 34 567</a><a href="tel:380961234567" class="o-header__phone a-phone">+38(096)12 34 567</a>
         </div>
       </div>
-      <div class="col-7 o-header__item justify-content-end">
-        <nav class="m-menu o-header__menu"><a href="./#home" class="menu__item">Головна</a><a href="./#carpets-clean" class="menu__item">Чистка Коврів</a><a href="./#reviews" class="menu__item">Відгуки</a><a href="./#contacts" class="menu__item">Контакти</a>
+      <div class="col-lg-7 col-md-7 col-auto o-header__item justify-content-end">
+        <div class="m-menu__overflow js-menu-overflow"></div>
+        <nav id="menu" class="m-menu js-menu o-header__menu"><a href="./#intro" data-menuanchor="intro" class="m-menu__item">Головна</a><a href="./#process" data-menuanchor="process" class="m-menu__item">Чистка килимів</a><a href="./#reviews" data-menuanchor="reviews" class="m-menu__item">Відгуки</a><a href="./#footer" data-menuanchor="footer" class="m-menu__item">Контакти</a>
         </nav>
-        <div class="a-button o-header__button">замовити дзвінок</div>
+        <div class="js-modal-window m-modal-window o-header__modal-window">
+          <div class="m-modal-window__text js-modal-window-text">Замовити дзвінок</div>
+          <div class="m-modal-window__send js-modal-window-send">надіслано</div>
+          <form class="js-modal-window-form m-modal-window__form">
+            <label for="phone"></label>
+            <input class="m-modal-window__input m-modal-window__field js-modal-window-phone a-input" placeholder="Ваш номер" id="phone" name="phone">
+            <button type="submit" class="m-modal-window__button js-modal-window-btn">
+              <svg class="a-icon m-modal-window__icon m-modal-window__icon--airplane js-airplane">
+                <use xlink:href="./img/sprite.svg#icon-airplane"></use>
+              </svg>
+              <svg class="a-icon m-modal-window__icon m-modal-window__icon--check js-check">
+                <use xlink:href="./img/sprite.svg#icon-check"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
+        <div class="o-header__hamburger a-hamburger js-hamburger">
+          <div class="a-hamburger__line js-hamburger__line-top"></div>
+          <div class="a-hamburger__line js-hamburger__line-middle"></div>
+          <div class="a-hamburger__line js-hamburger__line-bottom"></div>
+        </div>
       </div>
     </div>
   </header>
   <div class="main">
-    <section class="o-section-intro js-intro">
+    <section id="section-intro" class="o-section-intro js-intro l-select">
       <div class="o-section-intro__content">
         <div class="m-intro-slider o-section-intro__slider">
           <div class="m-intro-slider__items js-intro-slider">
             <div class="m-intro-slider__item">
               <div style="background-image: url(./img/intro-slider/intro-slide-1.jpg)" class="m-intro-slider__img"></div>
               <div class="m-intro-slider__content">
-                <h2 class="m-intro-slider__title">професійна<span>чистка коврів №1</span></h2>
+                <h2 class="m-intro-slider__title">професійна<span>чистка килимів №1</span></h2>
               </div>
             </div>
             <div class="m-intro-slider__item">
               <div style="background-image: url(./img/intro-slider/intro-slide-2.jpg)" class="m-intro-slider__img"></div>
               <div class="m-intro-slider__content">
-                <h2 class="m-intro-slider__title">професійна<span>чистка коврів №2</span></h2>
+                <h2 class="m-intro-slider__title">професійна<span>чистка килимів №2</span></h2>
               </div>
             </div>
             <div class="m-intro-slider__item">
               <div style="background-image: url(./img/intro-slider/intro-slide-3.jpg)" class="m-intro-slider__img"></div>
               <div class="m-intro-slider__content">
-                <h2 class="m-intro-slider__title">професійна<span>чистка коврів №3</span></h2>
+                <h2 class="m-intro-slider__title">професійна<span>чистка килимів №3</span></h2>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="o-section-process">
-      <div class="container o-section-process__container">
+    <section id="section-process" class="o-section-process l-select">
+      <div class="container o-section-process__container l-content">
         <div class="m-item-process o-section-process__items">
-          <div class="m-item-process__items">
-            <div class="m-item-process__item col-3"><img src="./img/process/process-1.png" alt="process-1" class="m-item-process__img">
+          <div class="m-item-process__items js-process">
+            <div class="m-item-process__item col-md-3 col-sm-4 col-6 col-phone js-process-item"><img src="./img/process/process-1.jpg" alt="process-1" class="m-item-process__img">
               <div class="m-item-process__number">1.</div>
               <h3 class="m-item-process__subtitle">Приймаємо замовлення по телефону та формуємо зявку</h3>
             </div>
-            <div class="m-item-process__item col-3"><img src="./img/process/process-2.png" alt="process-2" class="m-item-process__img">
+            <div class="m-item-process__item col-md-3 col-sm-4 col-6 col-phone js-process-item"><img src="./img/process/process-2.jpg" alt="process-2" class="m-item-process__img">
               <div class="m-item-process__number">2.</div>
               <h3 class="m-item-process__subtitle">Забираємо килим з вашого дому та доставляємо до нас у цех</h3>
             </div>
-            <div class="m-item-process__item col-3"><img src="./img/process/process-3.png" alt="process-3" class="m-item-process__img">
+            <div class="m-item-process__item col-md-3 col-sm-4 col-6 col-phone js-process-item"><img src="./img/process/process-3.jpg" alt="process-3" class="m-item-process__img">
               <div class="m-item-process__number">3.</div>
               <h3 class="m-item-process__subtitle">Вибиваємо пил та застарілий бруд, який знаходиться в структурі килима та піднімаємо ворс</h3>
             </div>
-            <div class="m-item-process__item col-3"><img src="./img/process/process-4.png" alt="process-4" class="m-item-process__img">
+            <div class="m-item-process__item col-md-3 col-sm-4 col-6 col-phone js-process-item"><img src="./img/process/process-4.jpg" alt="process-4" class="m-item-process__img">
               <div class="m-item-process__number">4.</div>
               <h3 class="m-item-process__subtitle">Замочуємо килим, наносимо (антиалергенну та безфосфатну) хімію та чистимо роторною машинкою</h3>
             </div>
-            <div class="m-item-process__item col-3"><img src="./img/process/process-5.png" alt="process-5" class="m-item-process__img">
+            <div class="m-item-process__item col-md-3 col-sm-4 col-6 col-phone js-process-item"><img src="./img/process/process-5.jpg" alt="process-5" class="m-item-process__img">
               <div class="m-item-process__number">5.</div>
               <h3 class="m-item-process__subtitle">Видаляємо залишки бруду, та полоскаємо у центрифузідо повного очищення</h3>
             </div>
-            <div class="m-item-process__item col-3"><img src="./img/process/process-6.png" alt="process-6" class="m-item-process__img">
+            <div class="m-item-process__item col-md-3 col-sm-4 col-6 col-phone js-process-item"><img src="./img/process/process-6.jpg" alt="process-6" class="m-item-process__img">
               <div class="m-item-process__number">6.</div>
               <h3 class="m-item-process__subtitle">Сушимо у спеціальній сушильній камері за допомогою промислового висушувача повітря</h3>
             </div>
-            <div class="m-item-process__item col-3"><img src="./img/process/process-7.png" alt="process-7" class="m-item-process__img">
+            <div class="m-item-process__item col-md-3 col-sm-4 col-6 col-phone js-process-item"><img src="./img/process/process-7.jpg" alt="process-7" class="m-item-process__img">
               <div class="m-item-process__number">7.</div>
               <h3 class="m-item-process__subtitle">Килим проходить контроль якості прання та упаковку в захисний чохол</h3>
             </div>
-            <div class="m-item-process__item col-3"><img src="./img/process/process-8.png" alt="process-8" class="m-item-process__img">
+            <div class="m-item-process__item col-md-3 col-sm-4 col-6 col-phone js-process-item"><img src="./img/process/process-8.jpg" alt="process-8" class="m-item-process__img">
               <div class="m-item-process__number">8.</div>
               <h3 class="m-item-process__subtitle">Доставляємо чистий килим до ваших дверей</h3>
             </div>
@@ -149,34 +171,107 @@
         </div>
       </div>
     </section>
-    <section class="o-section-advantages l-violet">
+    <section id="section-advantages" class="o-section-advantages l-violet l-select">
       <div class="container o-section-advantages__container l-content">
-        <h2 class="o-section-advantages__title">«Tech Clean»  <span>експерт в чистці коврів</span></h2>
+        <h2 class="o-section-advantages__title">«Tech Clean»  <span>експерт в чистці килимів</span></h2>
         <div class="m-item-advantage o-section-advantages__items">
           <div class="m-item-advantage__items">
-            <div class="m-item-advantage__item col-4"><img src="./img/advantage/carpet.svg" alt="carpet" class="m-item-advantage__img">
-              <h3 class="m-item-advantage__subtitle">Хімчистка коврів всіх раозмірів і видів</h3>
+            <div class="m-item-advantage__item col-md-4 col-6 col-phone"><img src="./img/advantage/carpet.svg" alt="carpet" class="m-item-advantage__img">
+              <h3 class="m-item-advantage__subtitle">Хімчистка килимів всіх раозмірів і видів</h3>
             </div>
-            <div class="m-item-advantage__item col-4"><img src="./img/advantage/restore.svg" alt="restore" class="m-item-advantage__img">
-              <h3 class="m-item-advantage__subtitle">Відновлення форми та кольору , підняття ворсу коврів</h3>
+            <div class="m-item-advantage__item col-md-4 col-6 col-phone"><img src="./img/advantage/restore.svg" alt="restore" class="m-item-advantage__img">
+              <h3 class="m-item-advantage__subtitle">Відновлення форми та кольору, підняття ворсу килимів</h3>
             </div>
-            <div class="m-item-advantage__item col-4"><img src="./img/advantage/spot.svg" alt="spot" class="m-item-advantage__img">
+            <div class="m-item-advantage__item col-md-4 col-6 col-phone"><img src="./img/advantage/spot.svg" alt="spot" class="m-item-advantage__img">
               <h3 class="m-item-advantage__subtitle">Виведення плям що в’їлися та забруднень любої важкості</h3>
             </div>
-            <div class="m-item-advantage__item col-4"><img src="./img/advantage/nature.svg" alt="nature" class="m-item-advantage__img">
+            <div class="m-item-advantage__item col-md-4 col-6 col-phone"><img src="./img/advantage/nature.svg" alt="nature" class="m-item-advantage__img">
               <h3 class="m-item-advantage__subtitle">Екологічні, безпечні та гіпоалергенні миючі засоби</h3>
             </div>
-            <div class="m-item-advantage__item col-4"><img src="./img/advantage/security.svg" alt="security" class="m-item-advantage__img">
+            <div class="m-item-advantage__item col-md-4 col-6 col-phone"><img src="./img/advantage/security.svg" alt="security" class="m-item-advantage__img">
               <h3 class="m-item-advantage__subtitle">Антибактеріальні хімчистка та профілактика пилевих кліщів</h3>
             </div>
-            <div class="m-item-advantage__item col-4"><img src="./img/advantage/warranty.svg" alt="warranty" class="m-item-advantage__img">
+            <div class="m-item-advantage__item col-md-4 col-6 col-phone"><img src="./img/advantage/warranty.svg" alt="warranty" class="m-item-advantage__img">
               <h3 class="m-item-advantage__subtitle">Гарантія повної цілісності виробу</h3>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="o-section-slider l-violet">
+    <section id="section-factors" class="o-section-factors l-select">
+      <div class="container o-section-factors__container l-content">
+        <h2 class="o-section-factors__title">фактори<br>забруднення килимів</h2>
+        <div class="o-section-factors__wrap">
+          <div style="background-image: url(./img/factors-bg.png)" class="m-item-factor o-section-factors__item">
+            <div class="m-item-factor__items js-factors-slider">
+              <div class="m-item-factor__item js-factors-slider-item">
+                <div style="background-image: url(./img/item-factors/item-factor-1.jpg)" class="m-item-factor__img"></div>
+                <div class="m-item-factor__text">Забруднення</div>
+              </div>
+              <div class="m-item-factor__item js-factors-slider-item">
+                <div style="background-image: url(./img/item-factors/item-factor-2.jpg)" class="m-item-factor__img"></div>
+                <div class="m-item-factor__text">Плями від кави</div>
+              </div>
+              <div class="m-item-factor__item js-factors-slider-item">
+                <div style="background-image: url(./img/item-factors/item-factor-3.jpg)" class="m-item-factor__img"></div>
+                <div class="m-item-factor__text">Сліди домашніх улюбленців</div>
+              </div>
+              <div class="m-item-factor__item js-factors-slider-item">
+                <div style="background-image: url(./img/item-factors/item-factor-4.jpg)" class="m-item-factor__img"></div>
+                <div class="m-item-factor__text">Пилеві кліщі</div>
+              </div>
+              <div class="m-item-factor__item js-factors-slider-item">
+                <div style="background-image: url(./img/item-factors/item-factor-5.jpg)" class="m-item-factor__img"></div>
+                <div class="m-item-factor__text">Потреба в гігієні</div>
+              </div>
+              <div class="m-item-factor__item js-factors-slider-item">
+                <div style="background-image: url(./img/item-factors/item-factor-6.jpg)" class="m-item-factor__img"></div>
+                <div class="m-item-factor__text">Шерсть</div>
+              </div>
+              <div class="m-item-factor__item js-factors-slider-item">
+                <div style="background-image: url(./img/item-factors/item-factor-7.jpg)" class="m-item-factor__img"></div>
+                <div class="m-item-factor__text">Запах</div>
+              </div>
+              <div class="m-item-factor__item js-factors-slider-item">
+                <div style="background-image: url(./img/item-factors/item-factor-8.jpg)" class="m-item-factor__img"></div>
+                <div class="m-item-factor__text">Сліди що важко виводяться</div>
+              </div>
+            </div>
+          </div>
+          <div class="m-item-factors o-section-factors__items">
+            <div class="m-item-factors__items">
+              <div data-nav="0" class="m-item-factors__item m-item-factors__item-left js-nav-factors-slider">
+                <div title="Забруднення" style="background-image: url(./img/item-factors/item-factor-1.jpg)" class="m-item-factors__img"></div>
+              </div>
+              <div data-nav="1" class="m-item-factors__item m-item-factors__item-left js-nav-factors-slider">
+                <div title="Плями від кави" style="background-image: url(./img/item-factors/item-factor-2.jpg)" class="m-item-factors__img"></div>
+              </div>
+              <div data-nav="2" class="m-item-factors__item m-item-factors__item-left js-nav-factors-slider">
+                <div title="Сліди домашніх улюбленців" style="background-image: url(./img/item-factors/item-factor-3.jpg)" class="m-item-factors__img"></div>
+              </div>
+              <div data-nav="3" class="m-item-factors__item m-item-factors__item-left js-nav-factors-slider">
+                <div title="Пилеві кліщі" style="background-image: url(./img/item-factors/item-factor-4.jpg)" class="m-item-factors__img"></div>
+              </div>
+            </div>
+            <div class="m-item-factors__items">
+              <div data-nav="4" class="m-item-factors__item m-item-factors__item-right js-nav-factors-slider">
+                <div title="Потреба в гігієні" style="background-image: url(./img/item-factors/item-factor-5.jpg)" class="m-item-factors__img"></div>
+              </div>
+              <div data-nav="5" class="m-item-factors__item m-item-factors__item-right js-nav-factors-slider">
+                <div title="Шерсть" style="background-image: url(./img/item-factors/item-factor-6.jpg)" class="m-item-factors__img"></div>
+              </div>
+              <div data-nav="6" class="m-item-factors__item m-item-factors__item-right js-nav-factors-slider">
+                <div title="Запах" style="background-image: url(./img/item-factors/item-factor-7.jpg)" class="m-item-factors__img"></div>
+              </div>
+              <div data-nav="7" class="m-item-factors__item m-item-factors__item-right js-nav-factors-slider">
+                <div title="Сліди що важко виводяться" style="background-image: url(./img/item-factors/item-factor-8.jpg)" class="m-item-factors__img"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="section-slider" class="o-section-slider l-violet l-select">
       <div class="o-section-slider__container container l-content">
         <h2 class="o-section-slider__title">нам труднощі<span>не страшні</span></h2>
         <div class="o-section-slider__items js-slider">
@@ -206,7 +301,7 @@
         </div>
       </div>
     </section>
-    <section class="o-section-reviews">
+    <section id="section-reviews" class="o-section-reviews l-select">
       <div class="container o-section-reviews__container l-content">
         <h2 class="o-section-reviews__title">Відгуки</h2>
         <div class="o-section-reviews__items js-reviews-slider">
@@ -245,38 +340,62 @@
         </div>
       </div>
     </section>
-    <section class="o-section-footer l-violet">
-      <div class="o-section-footer__container l-content">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1102.7118894065425!2d24.717820291757093!3d48.90194661542865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdbba0e0e1c6d1484!2z0J_RgNC-0YTQtdGB0ZbQudC90LUg0L_RgNCw0L3QvdGPINC60LjQu9C40LzRltCy!5e0!3m2!1suk!2sua!4v1519652343502" allowfullscreen class="o-section-footer__map col-5 m-map"></iframe>
-        <div class="m-form o-section-footer__form col-7">
-          <div class="m-form__title">як нас знайти</div>
-          <div class="m-form__thanks js-thank"><span>
-               
-              ДЯКУЄМО ЗА ЗАЯВКУ<br>Ми зв’яжемося з Вами найближчим часом.</span></div>
-          <form class="m-form__content js-form">
-            <label for="name"></label>
-            <input class="m-form__input m-form__field a-input" placeholder="Ваше ім'я" name="name">
-            <label for="phone"></label>
-            <input class="m-form__input m-form__field js-form-phone a-input" placeholder="Ваш номер" name="phone">
-            <label for="description"></label>
-            <textarea class="m-form__textarea m-form__field a-textarea" placeholder="Ваше повідомлення" name="description"></textarea><img src="https://thefallenbrain.files.wordpress.com/2016/05/input-black.gif" alt="captcha" class="captcha">
-            <input id="id_captcha_0" name="captcha_0" type="hidden" value="98c2f54430716806985ff5e5efa510f410f7e61f">
-            <label for="id_captcha_1"></label>
-            <input autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="id_captcha_1" name="captcha_1">
-            <button type="submit" class="m-form__button">Відправити</button>
-          </form>
-        </div>
-        <div class="m-contact o-section-footer__contact">
-          <div class="m-contact__content">
-            <div class="m-contact__address">Івано-Франківськ, вул.Джохара Дудаєва, 10</div><a href="tel:(096) 123 34 56" title="Подзвонити" class="m-contact__phone">38 (096) 123 34 56</a><a href="tel:(096) 123 34 56" title="Подзвонити" class="m-contact__phone">38 (096) 123 34 56</a>
-            <div class="m-social m-contact__social"><a href="#" title="facebook" class="m-social__link"><img src="./img/socials/facebook.svg" alt="facebook" class="m-social__img"></a><a href="#" title="instagram" class="m-social__link"><img src="./img/socials/instagram.svg" alt="instagram" class="m-social__img"></a><a href="#" title="twitter" class="m-social__link"><img src="./img/socials/twitter.svg" alt="twitter" class="m-social__img"></a>
+    <section id="section-footer" class="o-section-footer l-content">
+      <div class="o-section-footer__wrap">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1102.7118894065425!2d24.717820291757093!3d48.90194661542865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdbba0e0e1c6d1484!2z0J_RgNC-0YTQtdGB0ZbQudC90LUg0L_RgNCw0L3QvdGPINC60LjQu9C40LzRltCy!5e0!3m2!1suk!2sua!4v1519652343502" allowfullscreen class="o-section-footer__map m-map"></iframe>
+        <div class="o-section-footer__container l-violet">
+          <div class="m-contact o-section-footer__contact col-md-6 col-12">
+            <div class="m-contact__content">
+              <h2 class="m-contact__title">Контакти</h2>
+              <div class="m-contact__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget lacus ut augue semper blandit. Curabitur feugiat, ipsum vitae lacinia tempus, nisl sapien feugiat ante, vitae viverra quam ex at augue. Quisque ullamcorper tincidunt pulvinar.</div>
+              <div class="m-contact__address">
+                <svg class="a-icon m-contact__icon">
+                  <use xlink:href="./img/sprite.svg#icon-map"></use>
+                </svg>
+                <div class="m-contact__address__text">Івано-Франківськ, вул.Джохара Дудаєва, 10</div>
+              </div>
+              <div class="m-contact__phone">
+                <svg class="a-icon m-contact__icon">
+                  <use xlink:href="./img/sprite.svg#icon-call"></use>
+                </svg>
+                <div class="m-contact__phone-items"><a href="tel:0961233456" title="Подзвонити" class="m-contact__phone-item">38 (096) 123 34 56</a><a href="tel:0961233456" title="Подзвонити" class="m-contact__phone-item">38 (096) 123 34 56</a></div>
+              </div>
+              <div class="m-social m-contact__social"><a href="#" title="facebook" class="m-social__link"><img src="./img/socials/facebook.svg" alt="facebook" class="m-social__img">
+                  <div class="m-social__text">teac_clean</div></a><a href="#" title="instagram" class="m-social__link"><img src="./img/socials/instagram.svg" alt="instagram" class="m-social__img">
+                  <div class="m-social__text">teac_clean</div></a>
+              </div>
             </div>
+          </div>
+          <div class="m-form o-section-footer__form col-md-6 col-12">
+            <h2 class="m-form__title">зв’язатися з нами</h2>
+            <div class="m-form__thanks js-thank"><span>
+                 
+                ДЯКУЄМО ЗА ЗАЯВКУ<br>Ми зв’яжемося з Вами найближчим часом.</span></div>
+            <form class="m-form__content js-form">
+              <div class="m-form__fields">
+                <div class="m-form__item">
+                  <label for="name"></label>
+                  <input class="m-form__input m-form__field a-input" placeholder="Ваше ім'я" id="name" name="name">
+                </div>
+                <div class="m-form__item">
+                  <label for="phone"></label>
+                  <input class="m-form__input m-form__field m-form__item js-form-phone a-input" placeholder="Ваш номер" id="phone" name="phone">
+                </div>
+              </div>
+              <label for="description"></label>
+              <textarea class="m-form__textarea m-form__field a-textarea" placeholder="Ваше повідомлення" id="description" name="description"></textarea><img src="https://thefallenbrain.files.wordpress.com/2016/05/input-black.gif" alt="captcha" class="captcha">
+              <input id="id_captcha_0" name="captcha_0" type="hidden" value="98c2f54430716806985ff5e5efa510f410f7e61f">
+              <label for="id_captcha_1"></label>
+              <input autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="id_captcha_1" name="captcha_1">
+              <button type="submit" class="m-form__button">Відправити</button>
+            </form>
           </div>
         </div>
       </div>
     </section>
   </div>
   <script src="./scripts/libs/jquery.min.js"></script>
+  <script src="./scripts/libs/tweenMax.min.js"></script>
   <script src="./scripts/libs/jquery.validate.min.js"></script>
   <script src="./scripts/libs/jquery.mask.min.js"></script>
   <script src="./scripts/libs/slick.min.js"></script>
